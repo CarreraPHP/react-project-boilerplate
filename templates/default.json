@@ -52,6 +52,7 @@
     "license": "MIT",
     "scripts": {
       "build": "next build",
+      "docker:build": "docker build -t %%APPNAME%% .",
       "export": "next export",
       "dev": "next",
       "generate": "plop",

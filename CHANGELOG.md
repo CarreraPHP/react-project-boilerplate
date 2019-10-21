@@ -1,3 +1,51 @@
+# [3.1.0](https://github.com/amclin/react-project-boilerplate/compare/v3.0.2...v3.1.0) (2019-10-21)
+
+
+### Features
+
+* docker images for server-side-rendered apps ([e5351c1](https://github.com/amclin/react-project-boilerplate/commit/e5351c1960f66b9b6e393b7ff3cd7a6615f497f3)), closes [#9](https://github.com/amclin/react-project-boilerplate/issues/9)
+* prompts for ssr vs static sites ([819bb2d](https://github.com/amclin/react-project-boilerplate/commit/819bb2db0cd6a6b8a8062e9934b9ba0e2aabc1b6)), closes [#10](https://github.com/amclin/react-project-boilerplate/issues/10)
+* simplify building Docker images ([839bbf5](https://github.com/amclin/react-project-boilerplate/commit/839bbf5423f85d6923f37c6cf815f74dd8301e33))
+
+## [3.0.2](https://github.com/amclin/react-project-boilerplate/compare/v3.0.1...v3.0.2) (2019-10-18)
+
+
+### Bug Fixes
+
+* **deps:** bump cross-spawn from 6.0.5 to 7.0.1 ([d22520e](https://github.com/amclin/react-project-boilerplate/commit/d22520e7ec78c2b526cf6ccc21d328fae22c4c98))
+
+## [3.0.1](https://github.com/amclin/react-project-boilerplate/compare/v3.0.0...v3.0.1) (2019-10-18)
+
+
+### Bug Fixes
+
+* **yarn:** yarn create failing due to binary name ([7da9829](https://github.com/amclin/react-project-boilerplate/commit/7da9829715fd8cf3cb734e613793a037166eee49)), closes [#18](https://github.com/amclin/react-project-boilerplate/issues/18)
+
+# [3.0.0](https://github.com/amclin/react-project-boilerplate/compare/v2.8.0...v3.0.0) (2019-10-18)
+
+
+### Bug Fixes
+
+* rename npm package so yarn create works ([a60ee84](https://github.com/amclin/react-project-boilerplate/commit/a60ee84c347a41f27aff251e4025b89e1c4a5e10)), closes [#18](https://github.com/amclin/react-project-boilerplate/issues/18)
+
+
+### BREAKING CHANGES
+
+* `npx amclin-create-react-app` is now `npx create-amclin-nextjs-app`
+
+# [2.8.0](https://github.com/amclin/react-project-boilerplate/compare/v2.7.0...v2.8.0) (2019-10-17)
+
+
+### Bug Fixes
+
+* generated app not building or exporting because of unit tests ([c16072c](https://github.com/amclin/react-project-boilerplate/commit/c16072c8f28d2b80fab61b95c99baf91a4b403bc))
+* incorrect import paths in generated unit tests ([a5064a9](https://github.com/amclin/react-project-boilerplate/commit/a5064a9f71bbcc7c5f2827f9e34f9e194861c936))
+
+
+### Features
+
+* provide example of multiple pages and routing ([6e8f66c](https://github.com/amclin/react-project-boilerplate/commit/6e8f66cb46f9de9e23fc3b68186de11bddabc7d2)), closes [#4](https://github.com/amclin/react-project-boilerplate/issues/4)
+
 # [2.7.0](https://github.com/amclin/react-project-boilerplate/compare/v2.6.0...v2.7.0) (2019-10-16)
 
 

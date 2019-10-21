@@ -22,6 +22,7 @@ const program = new Commander.Command(packageJson.name)
   })
   .option('--use-npm')
   .option('--no-git', 'skip git creation and commits')
+  .option('--with-ssr', 'the generated project will have React server-side rendering')
   .option(
     '-e, --example <example-path>',
     'an example to bootstrap the app with'
@@ -30,12 +31,13 @@ const program = new Commander.Command(packageJson.name)
   .parse(process.argv)
 
 async function run() {
+  const questions = []
   if (typeof projectPath === 'string') {
     projectPath = projectPath.trim()
   }
 
   if (!projectPath) {
-    const res = await prompts({
+    questions.push({
       type: 'text',
       name: 'path',
       message: 'What is your project named?',
@@ -48,10 +50,21 @@ async function run() {
         return `Invalid project name: ${validation.problems[0]}`
       }
     })
+  }
 
-    if (typeof res.path === 'string') {
-      projectPath = res.path.trim()
-    }
+  if (!program.withSsr) {
+    questions.push({
+      type: 'confirm',
+      name: 'isStatic',
+      message: 'Is this app a statically-generated site? (For server-side-rendering choose No)',
+      initial: true
+    })
+  }
+
+  const res = await prompts(questions)
+
+  if (typeof res.path === 'string') {
+    projectPath = res.path.trim()
   }
 
   if (!projectPath) {
@@ -85,6 +98,7 @@ async function run() {
     appPath: resolvedProjectPath,
     useNpm: !!program.useNpm,
     noGit: !program.git,
+    isStatic: (program.withSsr) ? !program.withSsr : res.isStatic,
     example:
       typeof program.example === 'string' && program.example.trim()
         ? program.example.trim()
@@ -101,18 +115,18 @@ async function notifyUpdate() {
       const isYarn = shouldUseYarn()
 
       log()
-      log(chalk.yellow.bold('A new version of `amclin-create-react-app` is available!'))
+      log(chalk.yellow.bold('A new version of `create-amclin-nextjs-app` is available!'))
       log(`
         You can update by running:
           ${chalk.cyan(
             isYarn
-              ? 'yarn global add amclin-create-react-app'
-              : 'npm i -g amclin-create-react-app'
+              ? 'yarn global add create-amclin-nextjs-app'
+              : 'npm i -g create-amclin-nextjs-app'
           )}
       `)
       log()
       log(`But an even better option is to globally uninstall and in the future run:`)
-      log(chalk.cyan()` npx amclin-create-react-app`)
+      log(chalk.cyan()` npx create-amclin-nextjs-app`)
       log(`That way you'll always have the latest.`)
     }
   } catch (e) {

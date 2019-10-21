@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/amclin-create-react-app.svg)](https://www.npmjs.com/amclin-create-react-app) [![Build Status](https://travis-ci.org/amclin/react-project-boilerplate.svg?branch=master)](https://travis-ci.org/amclin/react-project-boilerplate)
+[![npm version](https://badge.fury.io/js/create-amclin-nextjs-app.svg)](https://www.npmjs.com/create-amclin-nextjs-app) [![Build Status](https://travis-ci.com/amclin/react-project-boilerplate.svg?branch=master)](https://travis-ci.com/amclin/react-project-boilerplate)[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=amclin/react-project-boilerplate)](https://dependabot.com)
 
 ![Branch Code Coverage](./coverage/badge-branches.svg) ![Functions Code Coverage](./coverage/badge-functions.svg) ![Lines Code Coverage](./coverage/badge-lines.svg) ![Statements Code Coverage](./coverage/badge-statements.svg)
 
@@ -13,7 +13,7 @@ This package includes the global command for creating new React projects incorpo
 
 ### The Easy Way
 
-1. Run `npx amclin-create-react-app`
+1. Run `npx create-amclin-nextjs-app` or `yarn create amclin-nextjs-app`
 2. Create a new empty repo in GitHub with the same project name
 3. Push the new local commits up the new remote repo
 
@@ -24,3 +24,20 @@ This package includes the global command for creating new React projects incorpo
 3. Run `node ../<path to the boilerplate>/index.js`
 4. Create a new empty repo in GitHub with the same project name
 5. Push the new local commits up the new remote repo
+
+### Advanced Examples
+
+#### Specify project name
+Skip the prompt and specify the project name on the command line:
+
+`npx create-amclin-nextjs-app -- myprojectname`
+
+#### Skip Git repo generation
+Skip the process of creating a git repo for the project. **Note:** *this can result in failures as some of the dependencies expect git to be present*:
+
+`npx create-amclin-nextjs-app --no-git`
+
+#### Assume Server-Side-Rendering (SSR)
+Skip the question and assume the generated project will need server-side rendering:
+
+`npx create-amclin-nextjs-app --with-ssr`

@@ -1,5 +1,17 @@
 {
-  "dependencies": ["next", "react", "react-dom", "prop-types"],
+  "dependencies": [
+    "next",
+    "react",
+    "react-dom",
+    "prop-types",
+    "next-redux-saga",
+    "next-redux-wrapper",
+    "react-redux",
+    "redux",
+    "redux-saga",
+    "axios",
+    "next-transpile-modules"
+  ],
   "devDependencies": [
     "@babel/core",
     "@babel/preset-env",
@@ -19,6 +31,7 @@
     "eslint-plugin-jsx-a11y",
     "eslint-plugin-react",
     "eslint-plugin-react-hooks",
+    "eslint-plugin-react-redux",
     "husky",
     "jest",
     "jest-coverage-badges",
@@ -26,7 +39,10 @@
     "plop",
     "prettier",
     "pretty-quick",
-    "react-test-renderer"
+    "react-test-renderer",
+    "redux-devtools-extension",
+    "node-sass",
+    "sass-loader"
   ],
   "package": {
     "description": "Boilerplate repo for React apps with CICD pipelines, best practices, and code governance",
